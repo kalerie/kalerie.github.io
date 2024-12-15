@@ -1,0 +1,15 @@
+.footer {
+  border-top: 1px solid white;
+
+}
+
+.content {
+  max-width: 1250px;
+
+  margin: 0 auto;
+  padding: 36px 76px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 8px 16px;
+  }
+}

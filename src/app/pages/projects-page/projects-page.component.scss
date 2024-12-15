@@ -1,0 +1,59 @@
+.title {
+  color: white;
+}
+
+.project-section {
+  margin-top: 24px;
+  gap: 24px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 976px) {
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-item {
+  border: 1px solid white;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+
+  & > *:not(:first-child) {
+    padding: 16px;
+    border-top: 1px solid white;
+  }
+
+  & > *:not(:last-child) {
+    //border-bottom: 1px solid white;
+
+  }
+
+
+
+}
+
+.main-section {
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  //padding-top: 16px !important;
+  //padding-bottom: 16px !important;
+
+}
+
+
+.btn-section {
+  margin-top: auto;
+
+  & > * {
+    flex: 1;
+    justify-content: center;
+  }
+}

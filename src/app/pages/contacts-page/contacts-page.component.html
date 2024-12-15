@@ -1,0 +1,36 @@
+<section id="contacts" class="mt-12 mb-24 cursor-default relative">
+  <div class="flex items-center gap-6">
+    <h1 class="title">
+      <span class="text-accent">#</span>contacts
+    </h1>
+    <span class="h-[1px] w-full flex-1 bg-violet"></span>
+  </div>
+
+  <p>
+    I’m currently open to new opportunities and collaborations!
+    Whether you have a project in mind or just want to ask a question, feel free to reach out —
+    I’d love to hear from you and explore how we can work together.
+  </p>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="input-box">
+      <input formControlName="name" placeholder="Your name" />
+      <input formControlName="email" placeholder="Email" />
+    </div>
+
+    <textarea formControlName="message" placeholder="Message" ></textarea>
+
+    <button type="submit" [disabled]="contactForm.invalid" [class.disabled]="contactForm.invalid" class="btn-primary w-fit">
+      Contact me
+    </button>
+  </form>
+
+  <div *ngIf="isPopupVisible" class="modal flex flex-col">
+    <span class="modal-close self-end" (click)="closeModal()">✕</span>
+    <p class="">
+      Thank you! Your message has been sent successfully.
+      I'll reach out to you soon.
+    </p>
+  </div>
+
+</section>
+

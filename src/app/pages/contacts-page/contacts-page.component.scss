@@ -1,0 +1,76 @@
+p {
+  margin: 24px 0;
+  width: 65%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+}
+
+.input-box {
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+  input {
+    flex: 1;
+  }
+}
+
+input {
+  height: 56px;
+  outline: none;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+textarea {
+  //height: 56px;
+  height: 100px;
+  resize: none;
+
+  outline: none;
+  padding: 8px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+
+//----------Modal-------------
+.modal {
+  z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: auto;
+  border: olive 1px solid;
+  background-color: white;
+  //border-radius: 5px;
+  padding: 16px;
+
+  color:  black;
+
+  p {
+    width: 100% !important;
+    font-size: small;
+  }
+}
+
+.modal-close {
+  cursor: pointer;
+}

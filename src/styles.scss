@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-dark: #282C33;
+  --primary-dark: #C778DD; /* violet */
+  --secondary-dark: #ABB2BF; /* gray */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@layer components {
+  .nav-link {
+    a {
+      @apply no-underline decoration-violet;
+      color: var(--secondary-dark);
+    }
+
+    a:hover {
+      @apply hover:underline hover:decoration-violet;
+      color: white;
+      text-underline-offset: 1rem;
+    }
+  }
+}
+
+body {
+  /*font-family: "Roboto", sans-serif;*/
+  /*font-style: normal;*/
+  font-family: "Fira Code", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  background-color: var(--background-dark);
+  color: var(--secondary-dark);
+
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+//html {
+//  scroll-behavior: smooth;
+//}
+
+//p {
+//  /*color: rgb(85, 85, 85);*/
+//  color: var(--secondary-dark);
+//}
+
+li {
+  list-style: none;
+}
+
+header, section {
+  //max-width: 1024px;
+  max-width: 1250px;
+
+  margin: 0 auto;
+  padding: 16px 76px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 8px 16px;
+  }
+}
+
+.text-accent {
+  color: var(--primary-dark);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.btn-primary {
+  @apply flex items-center border-solid	border-violet	font-semibold cursor-pointer;
+  padding: 16px;
+  height: 56px;
+  border-width: 1px;
+  color: white;
+  background-color: transparent;
+
+  &:hover {
+    @apply bg-violet/20;
+  }
+}
+
+.btn-secondary {
+  @apply flex items-center border-solid	border-[white] font-semibold cursor-pointer;
+  padding: 16px 8px;
+  height: 56px;
+  border-width: 1px;
+
+  background-color: transparent;
+
+  &:hover {
+    @apply border-violet;
+    color: white;
+  }
+}
+
+.link-primary {
+  @apply cursor-pointer;
+  transition: font-weight 0.2s ease;
+
+  &:hover {
+    @apply font-semibold;
+    color: white;
+  }
+}

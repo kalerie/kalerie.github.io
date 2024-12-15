@@ -1,0 +1,33 @@
+<section id="projects" class="mt-12 cursor-default">
+
+  <div class="flex items-center gap-6">
+    <h1 class="title">
+      <span class="text-accent">#</span>my projects
+    </h1>
+    <span class="h-[1px] w-full flex-1 bg-violet"></span>
+<!--    <a href="/projects" class="link-primary" >View all ~~></a>-->
+  </div>
+
+  <div class="project-section   ">
+    <div *ngFor="let project of myProjects" class="project-item flex ">
+      <img class="h-[200px]" [src]='getImageUrl(project.image)' [alt]='project.image'>
+      <div class="h-[120px]">
+        {{project.stack.join(', ')}}
+      </div>
+      <div class="main-section    flex ">
+        <h3 class="title ">{{project.name}}</h3>
+        <p>{{project.description}}</p>
+        <div class="btn-section   flex gap-2">
+          <a *ngIf="project.live" [href]="project.live" target="_blank" class=" btn-secondary">
+            Live <~>
+          </a>
+          <a *ngIf="project.github" [href]="project.github" target="_blank" class=" btn-secondary">
+            GitHub <~>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
