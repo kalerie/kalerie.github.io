@@ -1,29 +1,28 @@
 <nav id="hamburger-nav">
-  <div class="flex flex-col justify-around h-6 w-8 cursor-pointer" (click)="toggleMenu()">
-    <span [@crossBtnAnimation]="isOpen ? 'open' : 'closed'" class="bg-gray h-0.5"></span>
-    <span [@crossBtnAnimation]="isOpen ? 'open2' : 'closed'"
+  <div class="flex flex-col justify-around h-6 w-8 cursor-pointer" (click)="scrollService.toggleMenu()">
+    <span [@crossBtnAnimation]="(scrollService.isOpen$ | async) ? 'open' : 'closed'" class="bg-gray h-0.5"></span>
+    <span [@crossBtnAnimation]="(scrollService.isOpen$ | async) ? 'open2' : 'closed'"
           class="bg-gray h-0.5 w-2/3 self-end"
     ></span>
   </div>
-  <div [@menuAnimation]="isOpen ? 'open' : 'closed'" class="menu-links">
+  <div [@menuAnimation]="(scrollService.isOpen$ | async) ? 'open' : 'closed'" class="menu-links">
     <li>
-      <a href="#home" (click)="toggleMenu()">
+      <a href="/" (click)="scrollService.scrollToTop($event)">
         <span class="text-accent">#</span>home
       </a>
     </li>
     <li>
-      <a href="#projects" (click)="toggleMenu()">
+      <a href="#projects" (click)="scrollService.scrollToSection($event, 'projects')">
         <span class="text-accent">#</span>projects
       </a>
     </li>
     <li>
-      <a href="#about" (click)="toggleMenu()">
+      <a href="#about" (click)="scrollService.scrollToSection($event, 'about')">
         <span class="text-accent">#</span>about
       </a>
     </li>
-
     <li>
-      <a href="#contacts" (click)="toggleMenu()">
+      <a href="#contacts" (click)="scrollService.scrollToSection($event, 'contacts')">
         <span class="text-accent">#</span>contacts
       </a>
     </li>

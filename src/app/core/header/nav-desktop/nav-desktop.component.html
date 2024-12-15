@@ -1,22 +1,22 @@
 <nav id="desktop-nav">
   <ul class="flex flex-row gap-8 text-2xl">
     <li class="nav-link">
-      <a href="#home">
+      <a href="/" (click)="scrollService.scrollToTop($event)">
         <span class="text-accent">#</span>home
       </a>
     </li>
     <li class="nav-link">
-      <a href="#projects">
+      <a href="#projects" (click)="scrollService.scrollToSection($event, 'projects')">
         <span class="text-accent">#</span>projects
       </a>
     </li>
     <li class="nav-link">
-      <a href="#about">
+      <a href="#about" (click)="scrollService.scrollToSection($event, 'about')">
         <span class="text-accent">#</span>about
       </a>
     </li>
     <li class="nav-link">
-      <a href="#contacts">
+      <a href="#contacts" (click)="scrollService.scrollToSection($event, 'contacts')">
         <span class="text-accent">#</span>contacts
       </a>
     </li>

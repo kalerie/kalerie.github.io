@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ScrollService} from '../../services/scroll.service';
+import {AsyncPipe} from '@angular/common';
 
 @Component({
   selector: 'app-nav-hamburger',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './nav-hamburger.component.html',
   styleUrl: './nav-hamburger.component.scss',
   animations: [
@@ -50,17 +51,7 @@ import {ScrollService} from '../../services/scroll.service';
   ],
 })
 export class NavHamburgerComponent {
-  isOpen: boolean = false;
 
-  constructor(private scrollService: ScrollService) {}
+  constructor(public scrollService: ScrollService) {}
 
-  toggleMenu(): void {
-    this.isOpen = !this.isOpen;
-
-    if (this.isOpen) {
-      this.scrollService.preventScrolling();
-    } else {
-      this.scrollService.allowScrolling();
-    }
-  }
 }

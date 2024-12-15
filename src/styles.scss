@@ -52,9 +52,9 @@ h3 {
   font-weight: bold;
 }
 
-//html {
-//  scroll-behavior: smooth;
-//}
+html {
+  scroll-behavior: smooth;
+}
 
 //p {
 //  /*color: rgb(85, 85, 85);*/
@@ -75,6 +75,10 @@ header, section {
   @media screen and (max-width: 1024px) {
     padding: 8px 16px;
   }
+}
+
+.active {
+  color: white !important;
 }
 
 .text-accent {
