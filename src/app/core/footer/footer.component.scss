@@ -3,6 +3,17 @@
 
 }
 
+a {
+
+  &:hover img {
+    transform: scale(1.2);
+  }
+  img {
+    transition: transform 0.3s ease-in-out;
+
+  }
+}
+
 .content {
   max-width: 1250px;
 
